@@ -20,7 +20,6 @@ public class WebController {
                 if (amount.total < 1000) {
                     return amount;
                 }
-            }
         } catch (Exception exp) {
             System.err.println("An Error Occurred while processing the order: " + order.toString());
             exp.printStackTrace();
