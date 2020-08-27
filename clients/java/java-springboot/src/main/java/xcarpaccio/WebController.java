@@ -17,9 +17,7 @@ public class WebController {
         System.out.println("Order received: " + order.toString());
         try {
             Amount amount = new Amount(computeAmount(order));
-            if (amount.total < 1000) {
-                return amount;
-            }
+
         } catch (Exception exp) {
             System.err.println("An Error Occurred while processing the order: " + order.toString());
             exp.printStackTrace();
