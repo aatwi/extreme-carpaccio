@@ -45,7 +45,7 @@ public class WebController {
 
     Double computeAmount(Order order) {
         if (order.getTotalAmount() == 0) {
-            return 0;
+            return 0.0;
         }
         return order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
 
