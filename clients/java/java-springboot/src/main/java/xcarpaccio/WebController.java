@@ -13,17 +13,22 @@ public class WebController {
     @RequestMapping(value = "/order", method = RequestMethod.POST)
     public Amount answerQuote(@RequestBody Order order) {
         System.out.println("Order received: " + order.toString());
-        if (order.prices.length == 0)
-            return new Amount(computeAmount(order));
+        try {
+            if (order.prices.length == 0)
+                return new Amount(computeAmount(order));
 
-        if (order.country.equals("HU")) {
-            Amount amount = new Amount(computeAmount(order));
-            if (amount.total < 1000) {
-                return amount;
+            if (order.country.equals("HU")) {
+                Amount amount = new Amount(computeAmount(order));
+                if (amount.total < 1000) {
+                    return amount;
+                }
             }
-        }
 
-        // Throw a 404 if you don't want to respond to an order, without penalty
+        } catch (Exception exp) {
+            System.err.println("An Error Occurred while processing the order: " + order.toString());
+            exp.printStackTrace();
+            // Throw a 404 if you don't want to respond to an order, without penalty
+        }
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "cannot answer");
     }
 
@@ -40,5 +45,6 @@ public class WebController {
 
     Double computeAmount(Order order) {
         return order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
+
     }
 }
