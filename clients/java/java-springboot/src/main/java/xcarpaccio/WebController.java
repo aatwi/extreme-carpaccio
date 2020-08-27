@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.net.UnknownServiceException;
+
 @RestController
 public class WebController {
 
@@ -38,7 +40,9 @@ public class WebController {
     }
 
     Double computeAmount(Order order) {
-        if(order.reduction.equals("STANDARD")) {
-        return order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
+        if (order.reduction.equals("STANDARD")) {
+            return order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
+        }
+        throw new UnsupportedOperationException("The order reduction is not supported!");
     }
 }
