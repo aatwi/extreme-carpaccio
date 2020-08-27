@@ -16,10 +16,10 @@ public class WebController {
         try {
             if (order.prices.length == 0)
                 return new Amount(computeAmount(order));
-                Amount amount = new Amount(computeAmount(order));
-                if (amount.total < 1000) {
-                    return amount;
-                }
+            Amount amount = new Amount(computeAmount(order));
+            if (amount.total < 1000) {
+                return amount;
+            }
         } catch (Exception exp) {
             System.err.println("An Error Occurred while processing the order: " + order.toString());
             exp.printStackTrace();
