@@ -16,6 +16,13 @@ public class WebController {
         if (order.prices.length == 0)
             return new Amount(computeAmount(order));
 
+        if (order.country.equals("HU")) {
+            Amount amount = new Amount(computeAmount(order));
+            if (amount.total < 1000) {
+                return amount;
+            }
+        }
+
         // Throw a 404 if you don't want to respond to an order, without penalty
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "cannot answer");
     }
@@ -32,6 +39,6 @@ public class WebController {
     }
 
     Double computeAmount(Order order) {
-        return 0.0;
+        return order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
     }
 }
