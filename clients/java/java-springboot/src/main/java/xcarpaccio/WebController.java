@@ -17,11 +17,9 @@ public class WebController {
             if (order.prices.length == 0)
                 return new Amount(computeAmount(order));
 
-            if (order.country.equals("HU")) {
-                Amount amount = new Amount(computeAmount(order));
-                if (amount.total < 1000) {
-                    return amount;
-                }
+            Amount amount = new Amount(computeAmount(order));
+            if (amount.total < 1000) {
+                return amount;
             }
 
         } catch (Exception exp) {
