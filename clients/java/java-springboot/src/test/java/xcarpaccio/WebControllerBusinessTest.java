@@ -25,6 +25,7 @@ public class WebControllerBusinessTest {
         order.prices = new Double[]{10.2, 20.0};
         order.quantities = new Long[]{2L, 4L};
         order.country = "HU";
+        order.reduction = "STANDARD";
 
         Assert.assertEquals(127.508, (new WebController()).computeAmount(order), 0.01);
     }
