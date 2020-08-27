@@ -54,6 +54,6 @@ public class WebControllerMockedServerTest {
                         .contentType(MediaType.APPLICATION_JSON_UTF8))
                 // Throws a 404 for now, to avoid penalty
                 .andExpect(status().isOk())
-                .andExpect(content().json("{\"total\":20.0}"));
+                .andExpect(content().json("{\"total\":24.6}"));
     }
 }
