@@ -43,6 +43,5 @@ public class Order implements Serializable {
         if (prices == null || quantities == null) {
             return true;
         }
-        return prices.length == 0 || quantities.length == 0;
     }
 }
