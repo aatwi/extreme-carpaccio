@@ -18,4 +18,14 @@ public class WebControllerBusinessTest {
         order.country = "HU";
         Assert.assertEquals(127.508, (new WebController()).computeAmount(order), 0.01);
     }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void it_should_apply_the_tax_rate_for_the_respective_country() {
+        Order order = new Order();
+        order.prices = new Double[]{10.2, 20.0};
+        order.quantities = new Long[]{2L, 4L};
+        order.country = "HU";
+
+        Assert.assertEquals(127.508, (new WebController()).computeAmount(order), 0.01);
+    }
 }
