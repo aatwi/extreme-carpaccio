@@ -26,7 +26,7 @@ public class WebControllerMockedServerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void orderWithEmptyPriceListShouldReturn0() throws Exception {
+    public void orderWithEmptyPriceListShouldReturnError() throws Exception {
         this.mockMvc.perform(
                 post("/order/")
                         .content("{\"prices\":[]}")
@@ -37,12 +37,23 @@ public class WebControllerMockedServerTest {
     }
 
     @Test
-    public void aNominalTest() throws Exception {
+    public void orderWithUnmatchingPricesAndQuantitiesShouldReturnError() throws Exception {
         this.mockMvc.perform(
                 post("/order/")
                         .content("{\"prices\":[1]}")
                         .contentType(MediaType.APPLICATION_JSON_UTF8))
                 // Throws a 404 for now, to avoid penalty
                 .andExpect(status().isNotFound());
+    }
+
+    @Test
+    public void aValidOrder() throws Exception {
+        this.mockMvc.perform(
+                post("/order/")
+                        .content("{\"prices\":[10.0], \"quantities\":[2], \"country\":\"HU\", \"reduction\":\"STANDARD\"}")
+                        .contentType(MediaType.APPLICATION_JSON_UTF8))
+                // Throws a 404 for now, to avoid penalty
+                .andExpect(status().isOk())
+                .andExpect(content().json("{\"total\":20.0}"));
     }
 }
