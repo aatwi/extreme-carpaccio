@@ -40,8 +40,6 @@ public class Order implements Serializable {
 
     //todo: Test this
     private boolean isIncompleteOrder() {
-        if (prices == null || quantities == null) {
-            return true;
-        }
+        return prices == null || quantities == null;
     }
 }
