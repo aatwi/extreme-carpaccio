@@ -48,6 +48,5 @@ public class WebController {
             return 0.0;
         }
         return order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
-
     }
 }
