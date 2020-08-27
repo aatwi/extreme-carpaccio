@@ -2,36 +2,63 @@
 
 | Team | Date |
 | ---- | ---- |
-| XXX | MM/DD/YYYY |
+| DXP | 08/20/2020 |
+| DXP | 08/27/2020 |
 
 ## DO
 _`What did we do?`_
 
+08/20/2020
 - Setup for the Carapaccio kata  
 - Installed NPM on AHmad's mcahine
 - Wrote the tasks in a trello board
 - Wrote code for a feature to compute amount for hungary wit less than 1000 euros
 - We used the Spring Boot application 
 
+08/27/2020
+- Continued
+- Difficult to catch up at the beginning
+- a lot of time spent on error handling
+- time spent on adjusting team dynamics 
+
 ## LEARN
 _`What did we learn?`_
 
+08/20/2020
 - First time to facilitate 
 - 2 hours is too short for this kata 
 - We might need to use a full day for this kata if we want to cover all the cases 
 - 1/2 day is required at least 
 - Facilitator needs to be prepare for this in order not to waste of time 
 
+08/27/2020
+- We need more than a 2 hours session to make it effective (time to setup, not losing the momentum)
+- looks like a promising kata
+- Gamification is cool
+
 ## PUZZLE
 _`What still puzzles us?`_
 
+08/20/2020
 - External coaches cannot run this on there machines due to the IP port blockage 
-- 
+
+08/27/2020
+- Is it normal to spend a lot of time on error handling when dealing with a service?
+- Tricky to split 5 minutes round robin between coding / design ...
+- Is gamification a way to do asynchronous, self-service technical coaching?
 
 ## DECIDE
 _`How can we apply this in the future?`_
 
+08/20/2020
 - If we need to run it at large scale, we might consider having a VM where all coaches can have access to it
 - We can consider running it again with Philippe and Patrice (in group mode)
+- Patrice could not have his IntelliJ working :(
+   - it's not a straightforward env
+
+08/27/2020
+- Patrice to setup his IntellJ env
+- Might need to look into the setup to make it effective
+- Let's continue for 1 more session, there is more from a coaching point of view
 
 ![Retrospective](../../images/Retrospective.jpg)
