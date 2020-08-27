@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 public class Order implements Serializable {
-    public Double[] prices = new Double[0];
-    public Long[] quantities = new Long[0];
+    public Double[] prices;
+    public Long[] quantities;
     public String country;
     public String reduction;
 
@@ -23,7 +23,9 @@ public class Order implements Serializable {
     }
 
     public Double getTotalAmount() {
-
+        if (isEmptyOrder()) {
+            return 0.0;
+        }
 
         if(prices.length != quantities.length) {
             throw new UnsupportedOperationException("Dimension of quantity should be equal to that of the prices");
