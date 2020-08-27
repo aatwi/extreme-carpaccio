@@ -21,7 +21,7 @@ public class WebControllerBusinessTest {
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void it_should_throw_an_exception_for_non_standard_reduction() {
+    public void it_should_throw_an_exception_for_non_valid_reduction() {
         Order order = new Order();
         order.prices = new Double[]{10.2, 20.0};
         order.quantities = new Long[]{2L, 4L};
