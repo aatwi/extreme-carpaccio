@@ -22,7 +22,6 @@ public class WebController {
                     return amount;
                 }
             }
-
         } catch (Exception exp) {
             System.err.println("An Error Occurred while processing the order: " + order.toString());
             exp.printStackTrace();
@@ -43,9 +42,9 @@ public class WebController {
     }
 
     Double computeAmount(Order order) {
-        if (order.getTotalAmount() == 0) {
-            return 0.0;
-        }
+//        if (order.getTotalAmount() == 0) {
+//            return 0.0;
+//        }
         return order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
     }
 }
