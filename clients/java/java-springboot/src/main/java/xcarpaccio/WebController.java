@@ -16,10 +16,11 @@ public class WebController {
         try {
             if (order.prices.length == 0)
                 return new Amount(computeAmount(order));
-
-            Amount amount = new Amount(computeAmount(order));
-            if (amount.total < 1000) {
-                return amount;
+            if (order.country == "HU") {
+                Amount amount = new Amount(computeAmount(order));
+                if (amount.total < 1000) {
+                    return amount;
+                }
             }
 
         } catch (Exception exp) {
