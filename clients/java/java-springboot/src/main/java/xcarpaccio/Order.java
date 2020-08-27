@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Arrays;
 
 public class Order implements Serializable {
-    public Double[] prices;
-    public Long[] quantities;
+    public Double[] prices = new Double[0];
+    public Long[] quantities = new Long[0];
     public String country;
     public String reduction;
 
