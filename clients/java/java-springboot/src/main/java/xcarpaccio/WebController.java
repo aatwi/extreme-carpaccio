@@ -38,7 +38,7 @@ public class WebController {
     }
 
     Double computeAmount(Order order) {
-
+        if(order.reduction.equals("STANDARD"))
         return order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
     }
 }
