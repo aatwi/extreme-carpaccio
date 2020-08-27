@@ -20,7 +20,7 @@ public class WebControllerBusinessTest {
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void it_should_apply_the_tax_rate_for_the_respective_country() {
+    public void it_should_throw_an_exception_for_non_standard_reduction() {
         Order order = new Order();
         order.prices = new Double[]{10.2, 20.0};
         order.quantities = new Long[]{2L, 4L};
