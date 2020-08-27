@@ -23,7 +23,7 @@ public class Order implements Serializable {
     }
 
     public Double getTotalAmount() {
-        if (isEmptyOrder()) {
+        if (isIncompleteOrder()) {
             return 0.0;
         }
 
@@ -39,7 +39,7 @@ public class Order implements Serializable {
     }
 
     //todo: Test this
-    private boolean isEmptyOrder() {
+    private boolean isIncompleteOrder() {
         if (prices == null || quantities == null) {
             return true;
         }
