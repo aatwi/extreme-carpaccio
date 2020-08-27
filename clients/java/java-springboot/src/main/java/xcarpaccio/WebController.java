@@ -14,7 +14,7 @@ public class WebController {
     public Amount answerQuote(@RequestBody Order order) {
         System.out.println("Order received: " + order.toString());
         try {
-            Amount amount = computeAmount(order);
+            return computeAmount(order);
 
         } catch (Exception exp) {
             System.err.println("An Error Occurred while processing the order: " + order.toString());
