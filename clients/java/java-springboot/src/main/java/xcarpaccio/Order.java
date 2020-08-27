@@ -23,9 +23,7 @@ public class Order implements Serializable {
     }
 
     public Double getTotalAmount() {
-        if (isEmptyOrder()) {
-            return 0.0;
-        }
+
 
         if(prices.length != quantities.length) {
             throw new UnsupportedOperationException("Dimension of quantity should be equal to that of the prices");
