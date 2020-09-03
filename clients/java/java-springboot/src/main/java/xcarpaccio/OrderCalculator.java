@@ -15,6 +15,8 @@ public class OrderCalculator {
         }
 
         double amount = order.getTotalAmount() * TaxRateHelper.taxRateFor(order.country);
+        if (10000 <= amount && amount < 50000)
+
         if (amount < 1000) {
             return amount;
         }
