@@ -14,4 +14,9 @@ public class TaxRateHelperTest {
     public void it_should_apply_27_percent_tax_for_hungary() {
         Assert.assertEquals(1.27, TaxRateHelper.taxRateFor("HU"), 0.0);
     }
+
+    @Test
+    public void it_should_apply_20_percent_tax_for_germany() {
+        Assert.assertEquals(1.20, TaxRateHelper.taxRateFor("DE"), 0.0);
+    }
 }
