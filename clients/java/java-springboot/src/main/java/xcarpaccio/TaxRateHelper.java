@@ -3,7 +3,9 @@ package xcarpaccio;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class TaxRateHelper {
+final class TaxRateHelper {
+
+    private TaxRateHelper() {};
 
     static final Map<String, Double> taxPerCountry = new HashMap<String, Double>(){{
         put("HU", 1.27);
