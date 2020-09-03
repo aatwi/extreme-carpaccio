@@ -1,6 +1,10 @@
 package xcarpaccio;
 
+import java.util.Map;
+
 public class TaxRateHelper {
+
+    Map<String, Double> taxesPerCountry =
 
     public static double taxRateFor(String country) {
         if (country.equals("HU")) {
