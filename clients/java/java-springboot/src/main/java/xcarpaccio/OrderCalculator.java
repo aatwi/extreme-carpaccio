@@ -15,20 +15,18 @@ public class OrderCalculator {
         }
 
         double amount = order.getTotalAmount() * TaxRateHelper.taxRateFor(order.country);
-        if (10000 <= amount && amount < 50000) {
+        if (50000 <= amount) {
+            return amount * STANDARD_REDUCTION_50K_PLUS;
+        }
+        if (10000 <= amount) {
             return amount * STANDARD_REDUCTION_10K_PLUS;
         }
         else {
             if (amount < 1000) {
                 return amount;
             }
-
             if (amount == 1000) {
                 return amount * STANDARD_REDUCTION_1K_PLUS;
-            }
-
-            if (50000 <= amount) {
-                return amount * STANDARD_REDUCTION_50K_PLUS;
             }
         }
         throw new UnsupportedOperationException("We cannot yet handle reduction for an amount of " + amount);
