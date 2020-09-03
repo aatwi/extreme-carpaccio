@@ -5,7 +5,7 @@ import java.util.Map;
 
 final class TaxRateHelper {
 
-    private TaxRateHelper() {};
+    private TaxRateHelper() {}
 
     static final Map<String, Double> taxPerCountry = new HashMap<String, Double>(){{
         put("HU", 1.27);
