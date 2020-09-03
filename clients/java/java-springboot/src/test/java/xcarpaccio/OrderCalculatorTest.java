@@ -47,6 +47,17 @@ public class OrderCalculatorTest {
     }
 
     @Test
+    public void it_should_apply_standard_reduction_for_amount_greater_to_10k() {
+        order.prices = new Double[]{50000. / taxRateFor("DE") };
+        order.quantities = new Long[]{1L};
+        order.country = "DE";
+        order.reduction = "STANDARD";
+
+        assertEquals(50000. * STANDARD_REDUCTION_50K_PLUS,
+                computeAmount(order), 0.01);
+    }
+
+    @Test
     public void it_should_apply_standard_reduction_for_amount_equal_to_50k() {
         order.prices = new Double[]{50000. / taxRateFor("DE") };
         order.quantities = new Long[]{1L};
