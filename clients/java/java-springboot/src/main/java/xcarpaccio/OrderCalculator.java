@@ -9,11 +9,14 @@ public class OrderCalculator {
             throw new UnsupportedOperationException("The order reduction is not supported!");
         }
 
-        double result = order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
-        if (result < 1000) {
-            return result;
+        double amount = order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
+        if (amount < 1000) {
+            return amount;
         }
-        throw new UnsupportedOperationException("We cannot yet handle reduction for more than 1000 amount");
+        if (50000 <= amount) {
+            
+        }
+        throw new UnsupportedOperationException("We cannot yet handle reduction for an amount of " + amount);
 
     }
 }
