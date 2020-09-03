@@ -23,7 +23,7 @@ public class OrderCalculatorTest {
         order.country = "HU";
         order.reduction = "STANDARD";
 
-        assertEquals(127.508, computeAmount(order), 0.01);
+        assertEquals(order.getTotalAmount() * taxRateFor("HU"), computeAmount(order), 0.01);
     }
 
     @Test(expected = UnsupportedOperationException.class)
