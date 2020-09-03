@@ -19,14 +19,14 @@ public class OrderCalculator {
         if (50000 <= amount) {
             reduction = STANDARD_REDUCTION_50K_PLUS;
         }
-        if (10000 <= amount) {
+        else if (10000 <= amount) {
             reduction = STANDARD_REDUCTION_10K_PLUS;
         }
         else {
             if (amount < 1000) {
                 reduction = 1;
             }
-            if (amount == 1000) {
+            else if (amount == 1000) {
                 reduction = STANDARD_REDUCTION_1K_PLUS;
             }
             else {
