@@ -11,6 +11,7 @@ public class TaxRateHelper {
         }
         if (country.equals("PL")) {
             return 1.21;
-        }        throw new UnsupportedOperationException("Tax calculation for: " + country + " is not supported!");
+        }
+        throw new UnsupportedOperationException("Tax calculation for: " + country + " is not supported!");
     }
 }
