@@ -16,10 +16,9 @@ public class OrderCalculator {
 
         double amount = order.getTotalAmount() * TaxRateHelper.taxRateFor(order.country);
         if (10000 <= amount && amount < 50000) {
+            return amount * STANDARD_REDUCTION_10K_PLUS;
         }
         else {
-
-
             if (amount < 1000) {
                 return amount;
             }
