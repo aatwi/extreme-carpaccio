@@ -7,6 +7,7 @@ public class TaxRateHelper {
 
     static final Map<String, Double> taxPerCountry = new HashMap<String, Double>(){{
         put("HU", 1.27);
+        put("DE", 1.20);
     }};
 
     public static double taxRateFor(String country) {
