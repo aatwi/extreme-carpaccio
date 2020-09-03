@@ -59,9 +59,9 @@ public class OrderCalculatorTest {
 
     @Test
     public void it_should_apply_standard_reduction_for_amount_equal_to_50k() {
-        order.prices = new Double[]{priceBeforeTax(50000.)};
+        order.prices = new Double[]{priceBeforeTax(STANDARD_REDUCTION_THRESHOLD_50K)};
 
-        assertEquals(50000. * STANDARD_REDUCTION_50K_PLUS,
+        assertEquals(STANDARD_REDUCTION_THRESHOLD_50K * STANDARD_REDUCTION_50K_PLUS,
                 computeAmount(order), 0.01);
     }
 
