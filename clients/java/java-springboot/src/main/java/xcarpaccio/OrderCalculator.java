@@ -17,6 +17,11 @@ public class OrderCalculator {
         if (amount < 1000) {
             return amount;
         }
+
+        if (amount == 1000) {
+            return amount;
+        }
+
         if (50000 <= amount) {
             return amount * STANDARD_REDUCTION_50K_PLUS;
         }
