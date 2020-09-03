@@ -35,15 +35,15 @@ public class OrderCalculatorTest {
 
         assertEquals(order.getTotalAmount() * taxRateFor("HU"), computeAmount(order), 0.01);
     }
-    
+
     @Test
-    public void it_should_apply_standard_reduction_for_amount_lower_than_1k() {
-        order.prices = new Double[]{10. };
+    public void it_should_apply_standard_reduction_for_amount_equal_to_1k() {
+        order.prices = new Double[]{1000. / taxRateFor("DE") };
         order.quantities = new Long[]{1L};
         order.country = "DE";
         order.reduction = "STANDARD";
 
-        assertEquals(10. * STANDARD_REDUCTION_50K_PLUS,
+        assertEquals(1000. * STANDARD_REDUCTION_1K_PLUS,
                 computeAmount(order), 0.01);
     }
 
