@@ -84,5 +84,6 @@ _`How can we apply this in the future?`_
 
 09/03/2020
 - Let's stop there!
+- Idea: organize a 4h jam with murex devs to learn how to best use this kata
 
 ![Retrospective](../../images/Retrospective.jpg)
