@@ -18,7 +18,6 @@ public class OrderCalculator {
         double reduction = computeReduction(amount);
 
         return amount * reduction;
-
     }
 
     private static double computeReduction(double amount) {
