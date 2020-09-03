@@ -41,7 +41,7 @@ public class OrderCalculatorTest {
         order.country = "HU";
         order.reduction = "STANDARD";
         new WebController();
-        Assert.assertEquals(100000*(1 + TaxRateHelper.getTaxRateFor("HU") * (1 - 15/100)), OrderCalculator.computeAmount(order), 0.01);
+        Assert.assertEquals(100000 * (TaxRateHelper.getTaxRateFor("HU") * (1 - 15/100)), OrderCalculator.computeAmount(order), 0.01);
     }
 
     // TODO limit at 50000
