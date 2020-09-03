@@ -9,10 +9,10 @@
 _`What did we do?`_
 
 08/20/2020
-- Setup for the Carapaccio kata  
-- Installed NPM on AHmad's mcahine
+- Setup for the Carpaccio kata  
+- Installed NPM on Ahmad's machine
 - Wrote the tasks in a trello board
-- Wrote code for a feature to compute amount for hungary wit less than 1000 euros
+- Wrote code for a feature to compute the amount for hungary wit less than 1000 euros
 - We used the Spring Boot application 
 
 08/27/2020
