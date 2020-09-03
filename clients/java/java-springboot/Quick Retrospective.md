@@ -82,4 +82,7 @@ _`How can we apply this in the future?`_
 - Might need to look into the setup to make it effective
 - Let's continue for 1 more session, there is more from a coaching point of view
 
+09/03/2020
+- Let's stop there!
+
 ![Retrospective](../../images/Retrospective.jpg)
