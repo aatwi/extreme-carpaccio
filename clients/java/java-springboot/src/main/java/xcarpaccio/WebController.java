@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.net.UnknownServiceException;
-
 @RestController
 public class WebController {
 
@@ -16,7 +14,7 @@ public class WebController {
     public Amount answerQuote(@RequestBody Order order) {
         System.out.println("Order received: " + order.toString());
         try {
-            return new Amount(computeAmount(order));
+            return new Amount(OrderCalculator.computeAmount(order));
 
         } catch (Exception exp) {
             System.err.println("An Error Occurred while processing the order: " + order.toString());
@@ -37,16 +35,4 @@ public class WebController {
         return "pong";
     }
 
-    Double computeAmount(Order order) {
-        if (!order.reduction.equals("STANDARD")) {
-            throw new UnsupportedOperationException("The order reduction is not supported!");
-        }
-
-        double result = order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
-        if (1000 <= result) {
-            throw new UnsupportedOperationException("We cannot yet handle reduction for more than 1000 amount");
-        }
-
-        return result;
-    }
 }
