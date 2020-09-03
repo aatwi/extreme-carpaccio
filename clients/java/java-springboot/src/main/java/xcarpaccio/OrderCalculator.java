@@ -5,6 +5,7 @@ public class OrderCalculator {
     public static final int STANDARD_REDUCTION_1K_PLUS = 1 - 3 / 100;
     public static final int STANDARD_REDUCTION_10K_PLUS = 1 - 10 / 100;
     public static final int STANDARD_REDUCTION_50K_PLUS = 1 - 15 / 100;
+    public static final int STANDARD_REDUCTION_THRESHOLD_50K = 50000;
 
     public OrderCalculator() {
     }
@@ -21,7 +22,7 @@ public class OrderCalculator {
     }
 
     private static double computeReduction(double amount) {
-        if (50000 <= amount) {
+        if (STANDARD_REDUCTION_THRESHOLD_50K <= amount) {
             return STANDARD_REDUCTION_50K_PLUS;
         }
         if (10000 <= amount) {
