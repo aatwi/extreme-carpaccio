@@ -1,6 +1,7 @@
 package xcarpaccio;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,11 +16,16 @@ public class OrderCalculatorTest {
 
     private final Order order = new Order();
 
+    @Before
+    private void setUp() {
+        order.prices = new Double[]{500.0};
+        order.quantities = new Long[]{1L};
+        order.country = "DE";
+        order.reduction = "STANDARD";
+    }
+
     @Test(expected = UnsupportedOperationException.class)
     public void it_should_throw_an_exception_for_non_valid_reduction() {
-        order.prices = new Double[]{10.2, 20.0};
-        order.quantities = new Long[]{2L, 4L};
-        order.country = "HU";
         order.reduction = "XXXX";
 
         computeAmount(order);
