@@ -15,21 +15,26 @@ public class OrderCalculator {
         }
 
         double amount = order.getTotalAmount() * TaxRateHelper.taxRateFor(order.country);
+        double reduction = 1;
         if (50000 <= amount) {
-            return amount * STANDARD_REDUCTION_50K_PLUS;
+            reduction = STANDARD_REDUCTION_50K_PLUS;
         }
         if (10000 <= amount) {
-            return amount * STANDARD_REDUCTION_10K_PLUS;
+            reduction = STANDARD_REDUCTION_10K_PLUS;
         }
         else {
             if (amount < 1000) {
-                return amount;
+                reduction = 1;
             }
             if (amount == 1000) {
-                return amount * STANDARD_REDUCTION_1K_PLUS;
+                reduction = STANDARD_REDUCTION_1K_PLUS;
+            }
+            else {
+                throw new UnsupportedOperationException("We cannot yet handle reduction for an amount of " + amount);
             }
         }
-        throw new UnsupportedOperationException("We cannot yet handle reduction for an amount of " + amount);
+
+        return amount * reduction;
 
     }
 }
