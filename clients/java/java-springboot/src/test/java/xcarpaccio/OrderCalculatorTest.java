@@ -49,7 +49,7 @@ public class OrderCalculatorTest {
     }
 
     private double priceBeforeTax(double priceAfterTax) {
-        return priceAfterTax / taxRateFor("DE");
+        return priceAfterTax / taxRateFor(order.country);
     }
 
     @Test
