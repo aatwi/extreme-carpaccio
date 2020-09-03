@@ -6,10 +6,6 @@ public class TaxRateHelper {
 
     static final Map<String, Double> taxPerCountry;
 
-    public TaxRateHelper() {
-        taxPerCountry = {};
-    }
-
     public static double taxRateFor(String country) {
         if (country.equals("HU")) {
             return 1.27;
