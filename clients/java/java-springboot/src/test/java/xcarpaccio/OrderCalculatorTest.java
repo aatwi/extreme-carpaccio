@@ -1,6 +1,5 @@
 package xcarpaccio;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -40,13 +39,17 @@ public class OrderCalculatorTest {
 
     @Test
     public void it_should_apply_standard_reduction_for_amount_equal_to_1k() {
-        order.prices = new Double[]{1000. / taxRateFor("DE") };
+        order.prices = new Double[]{priceBeforeTax(1000.)};
         order.quantities = new Long[]{1L};
         order.country = "DE";
         order.reduction = "STANDARD";
 
         assertEquals(1000. * STANDARD_REDUCTION_1K_PLUS,
                 computeAmount(order), 0.01);
+    }
+
+    private double priceBeforeTax(double priceAfterTax) {
+        return priceAfterTax / taxRateFor("DE");
     }
 
     @Test
@@ -62,7 +65,7 @@ public class OrderCalculatorTest {
 
     @Test
     public void it_should_apply_standard_reduction_for_amount_equal_to_50k() {
-        order.prices = new Double[]{50000. / taxRateFor("DE") };
+        order.prices = new Double[]{priceBeforeTax(50000.)};
         order.quantities = new Long[]{1L};
         order.country = "DE";
         order.reduction = "STANDARD";
