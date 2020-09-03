@@ -5,8 +5,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static xcarpaccio.OrderCalculator.STANDARD_REDUCTION_50K_PLUS;
-import static xcarpaccio.OrderCalculator.computeAmount;
+import static xcarpaccio.OrderCalculator.*;
 import static xcarpaccio.TaxRateHelper.taxRateFor;
 
 /**
