@@ -16,6 +16,16 @@ public class OrderCalculatorTest {
 
     private final Order order = new Order();
 
+    @Test(expected = UnsupportedOperationException.class)
+    public void it_should_throw_an_exception_for_non_valid_reduction() {
+        order.prices = new Double[]{10.2, 20.0};
+        order.quantities = new Long[]{2L, 4L};
+        order.country = "HU";
+        order.reduction = "XXXX";
+
+        computeAmount(order);
+    }
+
     @Test
     public void it_should_apply_the_tax_rate_for_the_respective_country() {
         order.prices = new Double[]{10.2, 20.0};
@@ -25,15 +35,16 @@ public class OrderCalculatorTest {
 
         assertEquals(order.getTotalAmount() * taxRateFor("HU"), computeAmount(order), 0.01);
     }
+    
+    @Test
+    public void it_should_apply_standard_reduction_for_amount_lower_than_1k() {
+        order.prices = new Double[]{10. };
+        order.quantities = new Long[]{1L};
+        order.country = "DE";
+        order.reduction = "STANDARD";
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void it_should_throw_an_exception_for_non_valid_reduction() {
-        order.prices = new Double[]{10.2, 20.0};
-        order.quantities = new Long[]{2L, 4L};
-        order.country = "HU";
-        order.reduction = "XXXX";
-
-        computeAmount(order);
+        assertEquals(10. * STANDARD_REDUCTION_50K_PLUS,
+                computeAmount(order), 0.01);
     }
 
     @Test
