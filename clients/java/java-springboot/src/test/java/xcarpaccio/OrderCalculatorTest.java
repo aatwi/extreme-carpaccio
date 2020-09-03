@@ -53,7 +53,7 @@ public class OrderCalculatorTest {
         order.country = "DE";
         order.reduction = "STANDARD";
 
-        assertEquals(10000. * STANDARD_REDUCTION_10K_PLUS,
+        assertEquals(10000. * taxRateFor("DE") * STANDARD_REDUCTION_10K_PLUS,
                 computeAmount(order), 0.01);
     }
 
