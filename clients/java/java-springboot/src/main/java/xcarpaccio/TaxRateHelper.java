@@ -4,7 +4,11 @@ import java.util.Map;
 
 public class TaxRateHelper {
 
-    Map<String, Double> taxPerCountry =
+    static final Map<String, Double> taxPerCountry;
+
+    public TaxRateHelper() {
+        taxPerCountry = {};
+    }
 
     public static double taxRateFor(String country) {
         if (country.equals("HU")) {
