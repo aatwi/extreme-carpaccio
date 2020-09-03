@@ -14,7 +14,7 @@ public class OrderCalculator {
             return amount;
         }
         if (50000 <= amount) {
-
+            
         }
         throw new UnsupportedOperationException("We cannot yet handle reduction for an amount of " + amount);
 
