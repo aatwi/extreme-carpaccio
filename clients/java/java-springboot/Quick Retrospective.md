@@ -52,7 +52,7 @@ _`What did we learn?`_
 _`What still puzzles us?`_
 
 08/20/2020
-- External coaches cannot run this on there machines due to the IP port blockage 
+- External coaches cannot run this on their machines due to the IP port blockage 
 
 08/27/2020
 - Is it normal to spend a lot of time on error handling when dealing with a service?
@@ -78,12 +78,12 @@ _`How can we apply this in the future?`_
    - it's not a straightforward env
 
 08/27/2020
-- Patrice to setup his IntellJ env
+- Patrice to setup his IntelliJ env
 - Might need to look into the setup to make it effective
 - Let's continue for 1 more session, there is more from a coaching point of view
 
 09/03/2020
 - Let's stop there!
-- Idea: organize a 4h jam with murex devs to learn how to best use this kata
+- Idea: organize a 4h jam with Murex devs to learn how to best use this kata
 
 ![Retrospective](../../images/Retrospective.jpg)
