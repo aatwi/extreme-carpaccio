@@ -33,10 +33,7 @@ public class OrderCalculatorTest {
 
     @Test
     public void it_should_apply_the_tax_rate_for_the_respective_country() {
-        order.prices = new Double[]{10.2, 20.0};
-        order.quantities = new Long[]{2L, 4L};
         order.country = "HU";
-        order.reduction = "STANDARD";
 
         assertEquals(order.getTotalAmount() * taxRateFor("HU"), computeAmount(order), 0.01);
     }
