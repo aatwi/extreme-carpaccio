@@ -10,10 +10,10 @@ public class OrderCalculator {
         }
 
         double result = order.getTotalAmount() * TaxRateHelper.getTaxRateFor(order.country);
-        if (1000 <= result) {
-            throw new UnsupportedOperationException("We cannot yet handle reduction for more than 1000 amount");
+        if (result < 1000) {
+            return result;
         }
+        throw new UnsupportedOperationException("We cannot yet handle reduction for more than 1000 amount");
 
-        return result;
     }
 }
