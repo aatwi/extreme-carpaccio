@@ -17,7 +17,7 @@ public class OrderCalculatorTest {
     private final Order order = new Order();
 
     @Before
-    private void setUp() {
+    public void setUp() {
         order.prices = new Double[]{500.0};
         order.quantities = new Long[]{1L};
         order.country = "DE";
