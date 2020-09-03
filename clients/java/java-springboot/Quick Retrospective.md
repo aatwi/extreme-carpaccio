@@ -19,7 +19,14 @@ _`What did we do?`_
 - Continued
 - Difficult to catch up at the beginning
 - a lot of time spent on error handling
-- time spent on adjusting team dynamics 
+- time spent on adjusting team dynamics
+
+09/03/2020
+- Continued
+- all countries
+- some ranges (we still don't handle between 1K and 10K, looks to be most common orders)
+- inserted a bug with integer division 
+- Went faster this time
 
 ## LEARN
 _`What did we learn?`_
@@ -36,6 +43,11 @@ _`What did we learn?`_
 - looks like a promising kata
 - Gamification is cool
 
+09/03/2020
+- Careful when reusing same constants / implementation in tests and in code
+- Makes sense to have at least 1 hard-coded value in a test
+- Dealing with errors and exceptions can take a long time
+
 ## PUZZLE
 _`What still puzzles us?`_
 
@@ -46,6 +58,15 @@ _`What still puzzles us?`_
 - Is it normal to spend a lot of time on error handling when dealing with a service?
 - Tricky to split 5 minutes round robin between coding / design ...
 - Is gamification a way to do asynchronous, self-service technical coaching?
+
+09/03/2020
+- wouldn't this kata encourage dirty code?
+   - is it something to train?
+   - start playing with bad inputs to see what happens?
+   - give rules one after the other, to force adaptation?
+   - a sonar server? Quality gate?
+   - TODO for tech debt?
+   - Change rules during the game?
 
 ## DECIDE
 _`How can we apply this in the future?`_
