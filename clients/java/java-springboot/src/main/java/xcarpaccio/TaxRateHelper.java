@@ -2,7 +2,7 @@ package xcarpaccio;
 
 public class TaxRateHelper {
 
-    public static double getTaxRateFor(String country) {
+    public static double taxRateFor(String country) {
         if (country.equals("HU")) {
             return 1.27;
         }
